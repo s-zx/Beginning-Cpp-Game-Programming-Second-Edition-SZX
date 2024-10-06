@@ -40,9 +40,8 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/cmake-build-debug/SFML/cmake_install.cmake")
-  include("/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/cmake-build-debug/Chapter01/cmake_install.cmake")
-  include("/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/cmake-build-debug/Chapter05/cmake_install.cmake")
   include("/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/cmake-build-debug/Lab1/cmake_install.cmake")
+  include("/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/cmake-build-debug/Lab2/cmake_install.cmake")
 
 endif()
 

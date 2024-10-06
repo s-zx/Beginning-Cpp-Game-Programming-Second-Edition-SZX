@@ -32,7 +32,7 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set path to fallback-tool for dependency-resolution.
+# Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
 endif()
@@ -43,7 +43,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/build/SFML/src/SFML/Window/cmake_install.cmake")
   include("/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/build/SFML/src/SFML/Network/cmake_install.cmake")
   include("/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/build/SFML/src/SFML/Graphics/cmake_install.cmake")
-  include("/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/build/SFML/src/SFML/Audio/cmake_install.cmake")
 
 endif()
 

@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "../../../../output/lib/.2.6"
   "../../../../output/lib/libsfml-network.2.6.1.dylib"
   "../../../../output/lib/libsfml-network.2.6.dylib"
   "../../../../output/lib/libsfml-network.dylib"

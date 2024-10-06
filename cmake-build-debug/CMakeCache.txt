@@ -375,6 +375,15 @@ Lab1_IS_TOP_LEVEL:STATIC=OFF
 //Value Computed by CMake
 Lab1_SOURCE_DIR:STATIC=/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/Lab1
 
+//Value Computed by CMake
+Lab2_BINARY_DIR:STATIC=/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/cmake-build-debug/Lab2
+
+//Value Computed by CMake
+Lab2_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Lab2_SOURCE_DIR:STATIC=/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/Lab2
+
 //Path to a file.
 OGG_INCLUDE_DIR:PATH=/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/SFML/extlibs/headers
 
@@ -623,7 +632,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

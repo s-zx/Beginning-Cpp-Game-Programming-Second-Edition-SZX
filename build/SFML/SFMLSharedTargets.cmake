@@ -3,11 +3,11 @@
 if("${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}" LESS 2.8)
    message(FATAL_ERROR "CMake >= 2.8.0 required")
 endif()
-if(CMAKE_VERSION VERSION_LESS "3.0.0")
-   message(FATAL_ERROR "CMake >= 3.0.0 required")
+if(CMAKE_VERSION VERSION_LESS "2.8.3")
+   message(FATAL_ERROR "CMake >= 2.8.3 required")
 endif()
 cmake_policy(PUSH)
-cmake_policy(VERSION 3.0.0...3.28)
+cmake_policy(VERSION 2.8.3...3.23)
 #----------------------------------------------------------------
 # Generated CMake target import file.
 #----------------------------------------------------------------
@@ -15,11 +15,15 @@ cmake_policy(VERSION 3.0.0...3.28)
 # Commands may need to know the format version.
 set(CMAKE_IMPORT_FILE_VERSION 1)
 
+if(CMAKE_VERSION VERSION_LESS 3.0.0)
+  message(FATAL_ERROR "This file relies on consumers using CMake 3.0.0 or greater.")
+endif()
+
 # Protect against multiple inclusion, which would fail when already imported targets are added once more.
 set(_cmake_targets_defined "")
 set(_cmake_targets_not_defined "")
 set(_cmake_expected_targets "")
-foreach(_cmake_expected_target IN ITEMS sfml-system sfml-window OpenGL sfml-network sfml-graphics Freetype VORBIS FLAC sfml-audio)
+foreach(_cmake_expected_target IN ITEMS sfml-system sfml-window OpenGL sfml-network sfml-graphics Freetype)
   list(APPEND _cmake_expected_targets "${_cmake_expected_target}")
   if(TARGET "${_cmake_expected_target}")
     list(APPEND _cmake_targets_defined "${_cmake_expected_target}")
@@ -93,32 +97,6 @@ set_target_properties(Freetype PROPERTIES
   INTERFACE_LINK_LIBRARIES "/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/SFML/extlibs/libs-osx/Frameworks/freetype.framework"
 )
 
-# Create imported target VORBIS
-add_library(VORBIS INTERFACE IMPORTED)
-
-set_target_properties(VORBIS PROPERTIES
-  INTERFACE_COMPILE_DEFINITIONS "OV_EXCLUDE_STATIC_CALLBACKS"
-  INTERFACE_INCLUDE_DIRECTORIES "/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/SFML/extlibs/headers;/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/SFML/extlibs/headers"
-  INTERFACE_LINK_LIBRARIES "/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/SFML/extlibs/libs-osx/Frameworks/vorbisenc.framework;/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/SFML/extlibs/libs-osx/Frameworks/vorbisfile.framework;/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/SFML/extlibs/libs-osx/Frameworks/vorbis.framework;/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/SFML/extlibs/libs-osx/Frameworks/ogg.framework"
-)
-
-# Create imported target FLAC
-add_library(FLAC INTERFACE IMPORTED)
-
-set_target_properties(FLAC PROPERTIES
-  INTERFACE_COMPILE_DEFINITIONS "FLAC__NO_DLL"
-  INTERFACE_INCLUDE_DIRECTORIES "/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/SFML/extlibs/headers"
-  INTERFACE_LINK_LIBRARIES "/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/SFML/extlibs/libs-osx/Frameworks/FLAC.framework"
-)
-
-# Create imported target sfml-audio
-add_library(sfml-audio SHARED IMPORTED)
-
-set_target_properties(sfml-audio PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/SFML/include"
-  INTERFACE_LINK_LIBRARIES "sfml-system"
-)
-
 # Import target "sfml-system" for configuration ""
 set_property(TARGET sfml-system APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
 set_target_properties(sfml-system PROPERTIES
@@ -145,14 +123,6 @@ set_property(TARGET sfml-graphics APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONF
 set_target_properties(sfml-graphics PROPERTIES
   IMPORTED_LOCATION_NOCONFIG "/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/build/output/lib/libsfml-graphics.2.6.1.dylib"
   IMPORTED_SONAME_NOCONFIG "@rpath/libsfml-graphics.2.6.dylib"
-  )
-
-# Import target "sfml-audio" for configuration ""
-set_property(TARGET sfml-audio APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
-set_target_properties(sfml-audio PROPERTIES
-  IMPORTED_LINK_DEPENDENT_LIBRARIES_NOCONFIG "OpenAL::OpenAL"
-  IMPORTED_LOCATION_NOCONFIG "/Users/mac/Documents/6122/Lab1_Intro/Beginning-Cpp-Game-Programming-Second-Edition-master/build/output/lib/libsfml-audio.2.6.1.dylib"
-  IMPORTED_SONAME_NOCONFIG "@rpath/libsfml-audio.2.6.dylib"
   )
 
 # This file does not depend on other imported targets which have
